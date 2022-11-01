@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # options Chrome
 options = webdriver.ChromeOptions()
+options.add_argument('headless')
 options.add_argument('--ignore-ssl-errors=yes')
 options.add_argument('--ignore-certificate-errors')
 
