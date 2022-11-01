@@ -10,7 +10,13 @@ options.add_argument('--ignore-certificate-errors')
 
 
 def before_all(context):
-    context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    #Work on MAC without Docker
+    #context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    #On Jenkins vs Docker
+    context.driver = webdriver.Remote(
+        command_executor=f'http://localhost:4444/wd/hub',
+        options=options
+    )
     context.driver.maximize_window()
     context.driver.implicitly_wait(10)
 
