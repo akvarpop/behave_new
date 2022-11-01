@@ -1,4 +1,7 @@
+import time
+
 from selenium import webdriver
+import os
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -10,6 +13,8 @@ options.add_argument('--ignore-certificate-errors')
 
 
 def before_all(context):
+    os.system(f"docker run -d --name popravka_behave1 -p 4444:4444 selenium/standalone-chrome-debug")
+    time.sleep(4)
     #Work on MAC without Docker
     #context.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     #On Jenkins vs Docker (not work for me)
@@ -22,5 +27,7 @@ def before_all(context):
     context.driver.implicitly_wait(10)
 
 
-# def after_all(context):
-#     context.driver.quit()
+def after_all(context):
+    time.sleep(3)
+    context.driver.close()
+    os.system("docker rm --force popravka_behave1")
