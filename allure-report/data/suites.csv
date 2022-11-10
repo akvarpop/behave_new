@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Nov 10 11:13:32 EET 2022","Thu Nov 10 11:13:36 EET 2022","4480","","","","","","update_data_user",""
+"passed","Thu Nov 10 11:13:28 EET 2022","Thu Nov 10 11:13:30 EET 2022","1562","","","","","","We enter the page of the site and log in",""
+"passed","Thu Nov 10 11:13:30 EET 2022","Thu Nov 10 11:13:31 EET 2022","1228","","","","","","create new user in admin panel",""
+"passed","Thu Nov 10 11:13:31 EET 2022","Thu Nov 10 11:13:32 EET 2022","726","","","","","","search for the user we created",""
+"passed","Thu Nov 10 11:13:36 EET 2022","Thu Nov 10 11:13:38 EET 2022","1213","","","","","","delete user",""
+"passed","Thu Nov 10 11:13:36 EET 2022","Thu Nov 10 11:13:36 EET 2022","44","","","","","","check the fields filled in earlier",""
