@@ -3,9 +3,15 @@ import time
 from behave import *
 
 from selenium.webdriver.common.by import By
+from allure_commons.types import AttachmentType
+import allure
 
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
+
+@then('go screenshot for allure "{name}"')
+def step_impl(context, name):
+    allure.attach(context.driver.get_screenshot_as_png(), name=name, attachment_type=AttachmentType.PNG)
 
 
 @given('open site "{url}"')

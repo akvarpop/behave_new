@@ -4,6 +4,7 @@ Feature: test ui Hillel aq
     Then enter data in the field username "admin" By.ID "id_username"
     Then enter data in the username login "admin123" By.XPATH "//*[@id="id_password"]"
     And press the button for Login to enter the admin panel By.XPATH "//*[@id="login-form"]/div[3]/input"
+    Then go screenshot for allure "Login_on_main_page"
     Then checking a successful login to the admin page, By.XPATH "//*[@id="site-name"]/a"
 
   Scenario: create new user in admin panel
@@ -12,6 +13,7 @@ Feature: test ui Hillel aq
     And enter data in the password By.XPATH "//*[@id="id_password1"]" send keys "test12345"
     And enter data in the password confirm By.XPATH "//*[@id="id_password2"]" send keys "test12345"
     And click button save new user By.XPATH "//*[@id="user_form"]/div/div/input[1]"
+    Then go screenshot for allure "new_user"
     Then checking a successful create new user, By.XPATH "//*[@id="main"]/div/ul/li"
 
     Scenario: search for the user we created
@@ -29,6 +31,7 @@ Feature: test ui Hillel aq
       And update user data in the field last name By.XPATH "//*[@id="id_last_name"]" send keys "test"
       And update user data in the field email By.XPATH "//*[@id="id_email"]" send keys "test@test.test"
       And change staff status By.XPATH "//*[@id="id_is_staff"]"
+      Then go screenshot for allure "update_data_user"
       And click the button to save the result By.XPATH "//*[@id="user_form"]/div/div/input[3]"
 
     Scenario: check the fields filled in earlier
@@ -46,6 +49,7 @@ Feature: test ui Hillel aq
       And click on the drop down list to select options delete By.XPATH "//*[@id="changelist-form"]/div[1]/label/select/option[2]"
       And click button GO to confirm deletion By.XPATH "//*[@id="changelist-form"]/div[1]/button"
       Then click button YES I AM SURE By.XPATH "//*[@id="content"]/form/div/input[4]"
+      Then go screenshot for allure "delete user"
       Then check delete user By.XPATH "//*[@id="main"]/div/ul/li" result: "Successfully deleted 1 user."
 
 
